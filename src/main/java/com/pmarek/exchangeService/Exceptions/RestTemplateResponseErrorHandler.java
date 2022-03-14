@@ -30,10 +30,10 @@ public class RestTemplateResponseErrorHandler
 
         if (httpResponse.getStatusCode()
                 .series() == HttpStatus.Series.SERVER_ERROR) {
-            logger.error("Http server error\nCode: ", httpResponse.getStatusCode());
+            logger.error("Http server error\n");
         } else if (httpResponse.getStatusCode()
                 .series() == HttpStatus.Series.CLIENT_ERROR) {
-            logger.error("Http client error\n", httpResponse.getStatusCode());
+            logger.error("Http client error\n");
             if (httpResponse.getStatusCode() == HttpStatus.NOT_FOUND) {
                 logger.error("CODE: 404 NOT FOUND");
             }

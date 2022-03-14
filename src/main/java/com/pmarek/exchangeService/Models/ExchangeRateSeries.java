@@ -2,7 +2,6 @@ package com.pmarek.exchangeService.Models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.pmarek.exchangeService.Models.ExchangeRate;
 
 import java.util.List;
 

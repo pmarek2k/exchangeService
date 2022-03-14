@@ -24,8 +24,7 @@ public class CurrencyController {
     @GetMapping(path = "/api/exchange-rates/{currencyCode}", produces = "application/json")
     @ResponseBody
     public ExchangeRateSeries getCurrencyExchangeRateForLast5BusinessDays(@PathVariable("currencyCode") String currencyCode){
-        logger.info("exchange-rate API call has been received.");
-        ExchangeRateSeries exchangeRateSeries = currencyService.getCurrencyExchangeRateForLastBusinessDays(currencyCode, 5);
-        return exchangeRateSeries;
+        logger.info("Exchange-rate API call has been received.");
+        return currencyService.getCurrencyExchangeRateForLastBusinessDays(currencyCode, 5);
     }
 }

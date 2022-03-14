@@ -33,15 +33,10 @@ public class CurrencyService {
 
         HttpHeaders headers = new HttpHeaders();
         headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
-
         HttpEntity<String> request = new HttpEntity<>(headers);
 
-        logger.info("Sending call to NBP API");
+        logger.info("Sending call to exchange rate NBP API");
         ResponseEntity<ExchangeRateSeries> response = this.restTemplate.exchange(url, HttpMethod.GET, request, ExchangeRateSeries.class, currencyCode, numberOfDays);
-
-        if(response.getStatusCode() != HttpStatus.OK) {
-            return null;
-        }
 
         exchangeRateSeries = response.getBody();
         exchangeRateSeries.setExchangeRates(exchangeRateSeries.getExchangeRates().stream()
